@@ -15,5 +15,32 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return <html lang="en" className={`${barlow.variable} ${dmSans.variable}`}><body><a className="skip-link" href="#main">Skip to content</a><header className="site-header"><div className="shell header-inner"><Link href="/" className="logo-link" aria-label="Ken’s Diner home"><span className="logo-panel"><Image src="/diner-photos/kens-logo.png" alt="" width={365} height={151} priority /></span></Link><nav aria-label="Main navigation"><Link href="/menu">Menu</Link><a href={business.specials}>Daily specials</a><Link href="/#visit">Visit</Link></nav></div></header>{children}<footer className="site-footer"><div className="shell footer-inner"><span>Ken’s Diner · Schonsee, Edmonton</span><Link href="/menu">Menu</Link><a href={business.directions}>Directions ↗</a></div></footer></body></html>;
+  return (
+    <html lang="en" className={`${barlow.variable} ${dmSans.variable}`}>
+      <body>
+        <a className="skip-link" href="#main">Skip to content</a>
+        <header className="site-header">
+          <nav className="shell header-inner" aria-label="Main navigation">
+            <Link href="/" className="header-logo" aria-label="Ken’s Diner home">
+              <Image
+                src="/diner-photos/kens-logo.png"
+                alt=""
+                width={365}
+                height={151}
+                sizes="(max-width: 960px) 144px, (max-width: 1267px) 15vw, 190px"
+                loading="eager"
+              />
+            </Link>
+            <a className="header-specials" href={business.specials}>Daily specials</a>
+            <div className="header-actions">
+              <Link href="/#visit">Visit &amp; hours</Link>
+              <Link className="header-menu" href="/menu">View menu</Link>
+            </div>
+          </nav>
+        </header>
+        {children}
+        <footer className="site-footer"><div className="shell footer-inner"><span>Ken’s Diner · Schonsee, Edmonton</span><Link href="/menu">Menu</Link><a href={business.directions}>Directions ↗</a></div></footer>
+      </body>
+    </html>
+  );
 }
