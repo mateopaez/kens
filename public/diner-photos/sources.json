@@ -1,0 +1,92 @@
+[
+  {
+    "file": "public/images/burger-basket.webp",
+    "size": [
+      1800,
+      1012
+    ],
+    "sourcePage": "https://www.kensdiner.ca/",
+    "original": "https://static.wixstatic.com/media/e7d820_8c1e96f88c414fc8a7234dffb88d4018~mv2.jpg",
+    "use": "Hero. Keep the foreground basket in frame. Do not claim a specific burger."
+  },
+  {
+    "file": "public/images/coffee-at-the-counter.webp",
+    "size": [
+      1440,
+      960
+    ],
+    "sourcePage": "https://www.kensdiner.ca/",
+    "original": "https://static.wixstatic.com/media/e7d820_ac1ac3de47844f629279dded6c184852~mv2.png",
+    "use": "Visit or brunch feature. Keep both faces and the coffee cups visible. Do not identify the people."
+  },
+  {
+    "file": "public/images/classic-car.webp",
+    "size": [
+      1250,
+      334
+    ],
+    "sourcePage": "https://www.kensdiner.ca/menu",
+    "original": "https://static.wixstatic.com/media/e7d820_52e89341ccec4969b9129616aebfd18e~mv2.jpg",
+    "use": "Optional wide section divider from the top of the printed menu. Decorative."
+  },
+  {
+    "file": "public/images/pie-a-la-mode.webp",
+    "size": [
+      650,
+      350
+    ],
+    "sourcePage": "https://www.kensdiner.ca/brunch-menu",
+    "original": "https://static.wixstatic.com/media/e7d820_de12b64436704cf3a4596528578fd663~mv2.jpg",
+    "use": "Small dessert detail. The menu says pie flavours vary."
+  },
+  {
+    "file": "references/diner-menu-excerpt.webp",
+    "size": [
+      1800,
+      2329
+    ],
+    "sourcePage": "https://www.kensdiner.ca/menu",
+    "original": "https://static.wixstatic.com/media/e7d820_52e89341ccec4969b9129616aebfd18e~mv2.jpg",
+    "use": "Read for transcription and proofreading. Keep off the primary menu UI."
+  },
+  {
+    "file": "references/weekend-brunch.webp",
+    "size": [
+      1650,
+      3300
+    ],
+    "sourcePage": "https://www.kensdiner.ca/brunch-menu",
+    "original": "https://static.wixstatic.com/media/e7d820_38895c69da514c068126d16796b4161f~mv2.jpg",
+    "use": "Read for transcription and proofreading. Keep off the primary menu UI."
+  },
+  {
+    "file": "references/desserts.webp",
+    "size": [
+      1650,
+      3300
+    ],
+    "sourcePage": "https://www.kensdiner.ca/brunch-menu",
+    "original": "https://static.wixstatic.com/media/e7d820_de12b64436704cf3a4596528578fd663~mv2.jpg",
+    "use": "Read for transcription and proofreading. Keep off the primary menu UI."
+  },
+  {
+    "file": "references/early-bird.webp",
+    "size": [
+      773,
+      2000
+    ],
+    "sourcePage": "https://www.kensdiner.ca/menu",
+    "original": "https://static.wixstatic.com/media/e7d820_ee925ad4c7604dc28813146ff7ffa097~mv2.png",
+    "use": "Read for transcription and proofreading. Keep off the primary menu UI."
+  },
+  {
+    "file": "public/images/kens-logo.png",
+    "size": [
+      365,
+      151
+    ],
+    "sourcePage": "https://www.kensdiner.ca/",
+    "original": "https://static.wixstatic.com/media/e7d820_398d652af6b64d29ac0e40e77a9dbf43~mv2.png",
+    "use": "Original colour logo. Render at about 150\u2013175 CSS px on cream."
+  }
+]
