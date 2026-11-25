@@ -47,26 +47,25 @@ export default function Home() {
   return (
     <main id="main">
       <section className="diner-hero" aria-labelledby="hero-title">
-        <div className="diner-hero-checker" aria-hidden="true" />
+        <div className="diner-hero-image">
+          <Image src="/diner-photos/about-us.jpg" alt="Guests sharing burgers, fries, and milkshakes at Ken’s Diner" fill priority sizes="(max-width: 760px) 100vw, 60vw" />
+        </div>
         <div className="shell diner-hero-inner">
           <div className="diner-hero-copy">
-            <span className="diner-hero-kicker">Ken’s Diner · Schonsee, Edmonton</span>
-            <h1 id="hero-title">Pull up<br /><span>a booth!</span></h1>
-            <p>All-day diner favourites and good company, right around the corner.</p>
+            <span className="diner-hero-kicker">Your neighbourhood diner in Schonsee</span>
+            <h1 id="hero-title">Meet me<br />at <span>Ken’s.</span></h1>
+            <p>Big breakfasts, diner classics, and a booth with your name on it. Come hungry, stay awhile.</p>
             <div className="diner-hero-actions">
-              <Link className="diner-hero-primary" href="/menu">Explore the menu <span aria-hidden="true">↗</span></Link>
-              <a className="diner-hero-secondary" href={business.directions}>Get directions <span aria-hidden="true">↗</span></a>
+              <Link className="diner-hero-primary" href={business.specials}>See the specials <span aria-hidden="true">↗</span></Link>
+              <Link className="diner-hero-secondary" href="/menu">Explore the menu <span aria-hidden="true">↗</span></Link>
             </div>
-            <div className="diner-hero-signoff"><span aria-hidden="true">✦</span> Breakfast · Lunch · Dinner <span aria-hidden="true">✦</span></div>
-          </div>
-          <div className="diner-hero-art">
-            <div className="diner-hero-photo">
-              <div className="diner-hero-photo-image"><Image src="/diner-photos/burger-basket.webp" alt="Burger and fries served in a checkerboard basket at Ken’s Diner" fill priority sizes="(max-width: 760px) 100vw, 48vw" /></div>
-              <div className="diner-hero-photo-caption"><span>Homestyle classics</span><span>Made for good company</span></div>
+            <div className="diner-hero-location">
+              <span>6104 Schonsee Way NW, Edmonton</span>
+              <a href={business.directions}>Get directions <span aria-hidden="true">↗</span></a>
             </div>
-            <div className="diner-hero-seal" aria-hidden="true"><span>Come<br />on in!</span></div>
           </div>
         </div>
+        <div className="diner-hero-photo-note" aria-hidden="true">Good food. Better together.</div>
       </section>
       <section className="hours-strip" aria-label="Opening hours"><div className="shell hours-inner"><div><strong>Monday–Friday</strong><span>{business.hours.weekday.time}</span></div><div><strong>Saturday–Sunday</strong><span>{business.hours.weekend.time}</span></div><div><strong>Weekend brunch</strong><span>{business.brunchService.time}</span></div><p>{business.hours.holiday}</p></div></section>
       <div className="checker-divider" aria-hidden="true" />
