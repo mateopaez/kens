@@ -53,21 +53,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </header>
         {children}
         <footer className="site-footer">
-          <div className="footer-checker" aria-hidden="true" />
-          <div className="footer-feature">
-            <div className="shell footer-feature-inner">
-              <div className="footer-feature-copy">
-                <span className="footer-eyebrow">Your booth is waiting · Schonsee, Edmonton</span>
-                <h2>GOOD FOOD.<br /><em>GOOD TIMES.</em><br />RIGHT HERE.</h2>
-                <p>Come hungry, bring your people, and stay a while. The coffee’s on and the classics are ready.</p>
-                <div className="footer-cta-row">
-                  <a className="footer-cta footer-cta-primary" href={business.directions}>Get directions <span aria-hidden="true">↗</span></a>
-                  <a className="footer-cta footer-cta-secondary" href={business.phoneHref}>Call for pickup <span aria-hidden="true">↗</span></a>
-                </div>
-              </div>
-              <div className="footer-feature-art" aria-hidden="true"><div className="footer-record"><span>KEN’S<br />DINER<small>SCHONSEE · EDMONTON</small></span></div><div className="footer-art-star footer-art-star-one">✳</div><div className="footer-art-star footer-art-star-two">✳</div><span className="footer-art-caption">PULL UP A BOOTH!</span></div>
-            </div>
-          </div>
           <div className="footer-info">
             <div className="shell footer-info-grid">
               <div className="footer-brand">

@@ -4,6 +4,8 @@ import { connection } from "next/server";
 import { Suspense } from "react";
 import { business } from "@/data/business";
 import { dailySpecials, type DailySpecial } from "@/data/daily-specials";
+import { NewsletterSignup } from "./newsletter-signup";
+import "./visit.css";
 
 const specialDateLabel = (date: string) => new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Edmonton", weekday: "long", month: "long", day: "numeric", year: "numeric",
@@ -51,7 +53,35 @@ export default function Home() {
       <div className="checker-divider" aria-hidden="true" />
       <section className="explore shell" aria-labelledby="explore-title"><div className="explore-image"><Image src="/diner-photos/coffee-at-the-counter.webp" alt="Two guests with coffee and breakfast at Ken’s Diner" fill sizes="(max-width: 800px) 100vw, 48vw" /></div><div className="explore-content"><h2 id="explore-title">At the diner</h2><p>Breakfast, lunch, dinner, and a little extra time for brunch on weekends.</p><div className="menu-links"><Link href="/menu#early-bird"><span><strong>Early Bird Breakfast</strong><small>Monday–Friday · 8 am–11 am · Dine-in only</small></span><b aria-hidden="true">↗</b></Link><Link href="/menu#diner"><span><strong>Diner Menu</strong><small>All-day favourites</small></span><b aria-hidden="true">↗</b></Link><Link href="/menu#brunch"><span><strong>Weekend Brunch</strong><small>Saturday–Sunday · 9:30 am–2 pm</small></span><b aria-hidden="true">↗</b></Link></div></div></section>
       <Suspense fallback={<section id="specials" className="home-specials home-specials-loading"><div className="shell">Checking today’s specials…</div></section>}><HomeSpecials /></Suspense>
-      <section id="visit" className="visit"><div className="shell visit-inner"><div className="visit-intro"><h2>Visit Ken’s</h2><p>Dine in or carry out in Schonsee.</p><address>{business.address}</address><div className="visit-actions"><a className="button button-red" href={business.directions}>Get directions <span aria-hidden="true">↗</span></a><a className="button button-outline" href={business.phoneHref}>Call Ken’s</a></div></div><div className="visit-info"><h3>Hours</h3><dl><div><dt>{business.hours.weekday.days}</dt><dd>{business.hours.weekday.time}</dd></div><div><dt>{business.hours.weekend.days}</dt><dd>{business.hours.weekend.time}</dd></div><div><dt>Weekend brunch</dt><dd>{business.brunchService.time}</dd></div></dl><p>{business.hours.holiday}</p><h3>Contact</h3><a href={business.phoneHref}>{business.phone}</a><a href={`mailto:${business.email}`}>{business.email}</a><a href={business.instagram}>Instagram ↗</a></div></div></section>
+      <section id="visit" className="visit" aria-labelledby="visit-title">
+        <div className="visit-checker" aria-hidden="true" />
+        <div className="shell visit-layout">
+          <div className="visit-intro">
+            <span className="visit-kicker">Find us in Schonsee</span>
+            <h2 id="visit-title">Come on <em>in.</em></h2>
+            <p>Breakfast, lunch, dinner, and good company. We’d love to see you at Ken’s.</p>
+            <address>{business.address}</address>
+            <div className="visit-actions">
+              <a className="visit-primary" href={business.directions} target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+              <a className="visit-secondary" href={business.phoneHref}>Call ahead <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div className="visit-map-card">
+            <div className="visit-map-header"><span>Find us on the map</span><span>Schonsee · Edmonton</span></div>
+            <div className="visit-map-frame">
+              <iframe title="Google map showing Ken’s Diner at 6104 Schonsee Way NW, Edmonton" src="https://www.google.com/maps?q=Ken%27s%20Diner%2C%206104%20Schonsee%20Way%20NW%2C%20Edmonton%2C%20AB%20T5Z%200K6&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            </div>
+            <div className="visit-map-footer"><span><span className="visit-pin" aria-hidden="true" /> Ken’s Diner · 6104 Schonsee Way NW</span><a href={business.directions} target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a></div>
+          </div>
+        </div>
+        <div className="shell visit-bottom">
+          <div className="visit-details">
+            <div className="visit-hours"><span className="visit-panel-label">When to pull up</span><h3>Opening hours</h3><dl><div><dt>{business.hours.weekday.days}</dt><dd>{business.hours.weekday.time}</dd></div><div><dt>{business.hours.weekend.days}</dt><dd>{business.hours.weekend.time}</dd></div><div><dt>Weekend brunch</dt><dd>{business.brunchService.time}</dd></div></dl><p>{business.hours.holiday}</p></div>
+            <div className="visit-contact"><span className="visit-panel-label">Say hello</span><h3>Let’s talk</h3><a href={business.phoneHref}>{business.phone}</a><a href={`mailto:${business.email}`}>{business.email}</a></div>
+          </div>
+          <NewsletterSignup />
+        </div>
+      </section>
     </main>
   );
 }
