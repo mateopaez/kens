@@ -5,6 +5,8 @@ export const business = {
   phoneHref: "tel:+17802445367",
   email: "info@kensdiner.ca",
   instagram: "https://www.instagram.com/kensdineryeg/",
+  facebook: "https://www.facebook.com/kensdineryeg/",
+  googleReviews: "https://www.google.com/maps/search/?api=1&query=Ken%27s%20Diner%206104%20Schonsee%20Way%20NW%20Edmonton",
   specials: "/dailyspecials",
   directions: "https://www.google.com/maps/dir/?api=1&destination=6104%20Schonsee%20Way%20NW%2C%20Edmonton%2C%20AB%20T5Z%200K6",
   hours: {

@@ -15,6 +15,39 @@ const dinerPages = [
   { src: "/references/diner-page-4.jpg", width: 1700, height: 2200, alt: "Ken’s Diner kids’ menu with brunch, lunch, and dinner", label: "04 / Little diners" },
 ];
 
+const favourites = [
+  {
+    href: "#early-bird",
+    image: "/diner-photos/breakfast.jpg",
+    alt: "Breakfast plates with eggs, potatoes, toast, and fruit",
+    category: "01 / WEEKDAY BREAKFAST",
+    name: "The Early Bird",
+    description: "Two eggs, your choice of breakfast meat, homemade hashbrowns & toast.",
+    price: "$10.00",
+    action: "See breakfast",
+  },
+  {
+    href: "#diner",
+    image: "/diner-photos/kens-burger.jpg",
+    alt: "Burger with cheese, lettuce, tomato, and fries",
+    category: "02 / DINER CLASSIC",
+    name: "Ken Burger",
+    description: "A 5 oz beef burger with mushrooms and Swiss cheese.",
+    price: "$17.00",
+    action: "See diner menu",
+  },
+  {
+    href: "#desserts",
+    image: "/diner-photos/pie.jpg",
+    alt: "Slice of pie served with a scoop of ice cream",
+    category: "03 / SOMETHING SWEET",
+    name: "Mile High Pie",
+    description: "Ask for today’s flavour. Pictured à la mode; add ice cream for $2.50.",
+    price: "$7.50",
+    action: "See desserts",
+  },
+];
+
 function MenuSheet({ src, width, height, alt, label }: { src: string; width: number; height: number; alt: string; label: string }) {
   return <figure className="retro-sheet">
     <a href={src} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${label} menu page in a new tab`}>
@@ -26,32 +59,15 @@ function MenuSheet({ src, width, height, alt, label }: { src: string; width: num
 
 export default function MenuPage() {
   return <main id="main" className="retro-menu">
-    <section className="retro-hero" aria-labelledby="menu-title">
-      <div className="retro-hero-inner shell">
-        <div className="retro-hero-copy">
-          <span className="retro-eyebrow">Ken’s Diner · Schonsee, Edmonton</span>
-          <h1 id="menu-title">GOOD FOOD.<br /><em>GOOD TIMES.</em></h1>
-          <p>Breakfast classics, diner favourites, and a little something sweet. Find your next favourite, then come pull up a booth.</p>
-          <div className="retro-hero-actions">
-            <a className="retro-button retro-button-red" href={business.phoneHref}>Call for pickup <span aria-hidden="true">↗</span></a>
-            <a className="retro-button retro-button-outline" href="#menu-board">Explore the menu <span aria-hidden="true">↓</span></a>
-          </div>
-          <span className="retro-hero-phone">Order by phone: {business.phone}</span>
-        </div>
-        <div className="retro-hero-photo">
-          <Image src="/diner-photos/burger-basket.webp" alt="Burger and fries served in a diner basket" fill priority sizes="(max-width: 800px) 100vw, 48vw" />
-          <div className="retro-photo-stamp" aria-hidden="true"><span>Pull up<br />a booth!</span></div>
-        </div>
-      </div>
-    </section>
     <div className="retro-checker" aria-hidden="true" />
 
     <section className="retro-highlights shell" aria-labelledby="highlights-title">
-      <div className="retro-highlights-heading"><div><span className="retro-eyebrow">Straight from the menu</span><h2 id="highlights-title">HOUSE FAVOURITES</h2></div><p>A few good places to start. See the full menu below for all the details.</p></div>
+      <div className="retro-highlights-heading"><div><span className="retro-eyebrow">Ken’s Diner · The menu</span><h1 id="highlights-title">HOUSE FAVOURITES</h1><p>Start with the classics, then explore every page of the menu below.</p></div><a className="retro-button retro-button-outline" href={business.phoneHref}>Call for pickup <span aria-hidden="true">↗</span></a></div>
       <div className="retro-highlights-grid">
-        <a href="#early-bird" className="retro-highlight"><span className="retro-highlight-num">01 / WEEKDAY BREAKFAST</span><strong>The Early Bird</strong><span className="retro-highlight-description">Two eggs, your choice of breakfast meat, homemade hashbrowns & toast.</span><span className="retro-highlight-bottom"><b>$10.00</b><span>See breakfast ↗</span></span></a>
-        <a href="#diner" className="retro-highlight"><span className="retro-highlight-num">02 / DINER CLASSIC</span><strong>Ken Burger</strong><span className="retro-highlight-description">A 5 oz beef burger with mushrooms and Swiss cheese.</span><span className="retro-highlight-bottom"><b>$17.00</b><span>See diner menu ↗</span></span></a>
-        <a href="#desserts" className="retro-highlight"><span className="retro-highlight-num">03 / SOMETHING SWEET</span><strong>Mile High Pie</strong><span className="retro-highlight-description">A slice of pie. Ask your server for today’s flavour.</span><span className="retro-highlight-bottom"><b>$7.50</b><span>See dessert ↗</span></span></a>
+        {favourites.map((item) => <a href={item.href} className="retro-highlight" key={item.name}>
+          <div className="retro-highlight-photo"><Image src={item.image} alt={item.alt} fill priority={item.name === "The Early Bird"} sizes="(max-width: 760px) 100vw, 33vw" /><span className="retro-highlight-price">{item.price}</span></div>
+          <div className="retro-highlight-copy"><span className="retro-highlight-num">{item.category}</span><strong>{item.name}</strong><span className="retro-highlight-description">{item.description}</span><span className="retro-highlight-bottom">{item.action} <span aria-hidden="true">↗</span></span></div>
+        </a>)}
       </div>
     </section>
 
