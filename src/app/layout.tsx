@@ -31,7 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 loading="eager"
               />
             </Link>
-            <a className="header-specials" href={business.specials}>Daily specials</a>
+            <Link className="header-specials" href={business.specials}>Daily specials</Link>
             <div className="header-actions">
               <Link href="/#visit">Visit &amp; hours</Link>
               <Link className="header-menu" href="/menu">View menu</Link>

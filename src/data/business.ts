@@ -5,7 +5,7 @@ export const business = {
   phoneHref: "tel:+17802445367",
   email: "info@kensdiner.ca",
   instagram: "https://www.instagram.com/kensdineryeg/",
-  specials: "https://www.kensdiner.ca/dailyspecials",
+  specials: "/dailyspecials",
   directions: "https://www.google.com/maps/dir/?api=1&destination=6104%20Schonsee%20Way%20NW%2C%20Edmonton%2C%20AB%20T5Z%200K6",
   hours: {
     weekday: { days: "Monday–Friday", time: "8 am–6 pm" },
