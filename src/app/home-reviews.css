@@ -1,0 +1,150 @@
+.home-reviews {
+  --review-ink: #163c56;
+  --review-paper: #fff9ed;
+  --review-red: #cb2f47;
+  --review-gold: #ecad36;
+  padding-block: clamp(62px, 6vw, 88px) clamp(66px, 6vw, 84px);
+  border-bottom: 1px solid rgba(255, 249, 237, .42);
+  color: var(--review-paper);
+}
+
+.home-reviews-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 34px;
+}
+
+.home-reviews-kicker {
+  display: block;
+  margin-bottom: 13px;
+  color: var(--review-gold);
+  font: 700 16px/1.1 var(--font-display), "Arial Narrow", sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.home-reviews-heading h2 {
+  font-size: clamp(68px, 7vw, 102px);
+  line-height: .82;
+  text-transform: uppercase;
+}
+
+.home-reviews-heading > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 50px;
+  padding: 10px 19px;
+  border: 2px solid var(--review-paper);
+  border-radius: var(--button-radius);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.home-reviews-heading > a:hover { background: var(--review-paper); color: var(--review-ink); }
+
+.home-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(20px, 2.4vw, 32px);
+  padding: 14px 8px 16px 3px;
+}
+
+.home-review {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  border: 7px solid var(--review-red);
+  background: var(--review-paper);
+  color: var(--review-ink);
+  box-shadow: 7px 7px 0 #092f49;
+  transform: rotate(-1deg);
+}
+
+.home-review:nth-child(2) { transform: rotate(1deg); }
+.home-review:nth-child(3) { transform: rotate(-.5deg); }
+
+.home-review blockquote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex: 1;
+  min-height: 330px;
+  margin: 0;
+  padding: 75px clamp(19px, 2.1vw, 34px) 38px;
+  text-align: center;
+}
+
+.home-review blockquote::before {
+  content: "”";
+  position: absolute;
+  top: -38px;
+  left: 50%;
+  color: var(--review-red);
+  font: 900 132px/1 Georgia, serif;
+  transform: translateX(-50%);
+}
+
+.home-review-stars {
+  color: #a56a08;
+  font-size: 29px;
+  letter-spacing: .14em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.home-review blockquote p {
+  width: 100%;
+  font-size: clamp(18px, 1.65vw, 23px);
+  font-weight: 700;
+  line-height: 1.38;
+}
+
+.home-review figcaption {
+  align-self: flex-end;
+  min-width: 54%;
+  margin: 0 20px -17px 18px;
+  padding: 8px 18px 6px;
+  background: var(--review-gold);
+  color: var(--review-red);
+  box-shadow: 5px 5px 0 var(--review-red);
+  font: 700 clamp(29px, 3vw, 42px)/1 var(--font-display), "Arial Narrow", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(1deg);
+}
+
+@media (max-width: 850px) {
+  .home-reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 42px; }
+  .home-review:last-child { grid-column: 1 / -1; width: min(100%, 580px); justify-self: center; }
+  .home-review blockquote p { font-size: clamp(19px, 2.2vw, 23px); }
+}
+
+@media (max-width: 700px) {
+  .home-reviews-heading { display: block; }
+  .home-reviews-heading h2 { font-size: clamp(60px, 12vw, 82px); }
+  .home-reviews-heading > a { margin-top: 25px; }
+  .home-reviews-grid { grid-template-columns: 1fr; gap: 43px; max-width: 580px; margin-inline: auto; }
+  .home-review, .home-review:nth-child(2), .home-review:nth-child(3) { transform: none; }
+  .home-review:last-child { grid-column: auto; width: 100%; }
+  .home-review blockquote { min-height: 0; padding: 64px 24px 30px; }
+  .home-review blockquote p { font-size: clamp(18px, 4.7vw, 23px); }
+}
+
+@media (max-width: 480px) {
+  .home-reviews { padding-top: 55px; padding-bottom: 62px; }
+  .home-reviews-heading h2 { font-size: clamp(54px, 14vw, 70px); }
+  .home-reviews-heading > a { width: 100%; justify-content: space-between; }
+  .home-reviews-grid { padding-right: 6px; }
+  .home-review { border-width: 6px; }
+  .home-review blockquote { padding-inline: 18px; }
+  .home-review figcaption { font-size: 29px; }
+}

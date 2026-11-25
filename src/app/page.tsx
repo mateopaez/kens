@@ -7,7 +7,23 @@ import { dailySpecials, type DailySpecial } from "@/data/daily-specials";
 import { NewsletterSignup } from "./newsletter-signup";
 import "./home-hero.css";
 import "./home-menu.css";
+import "./home-reviews.css";
 import "./visit.css";
+
+const reviews = [
+  {
+    quote: "Probably the best sandwiches we’ve ever eaten. Even the sides were hard to beat. 100% recommend!!",
+    name: "Meikan D.",
+  },
+  {
+    quote: "Ken's Diner is a hidden gem with prices that cannot be beat where you get more than you pay for. The staff are very welcoming and friendly.",
+    name: "Merle B.",
+  },
+  {
+    quote: "Great little diner. We had the Classic Benny and the Lil’ Susie breakfast and it was all excellent. The hollandaise was light and perfect. Well done.",
+    name: "Tom T.",
+  },
+];
 
 const specialDateLabel = (date: string) => new Intl.DateTimeFormat("en-CA", {
   timeZone: "America/Edmonton", weekday: "long", month: "long", day: "numeric", year: "numeric",
@@ -54,7 +70,7 @@ export default function Home() {
         <div className="shell diner-hero-inner">
           <div className="diner-hero-copy">
             <span className="diner-hero-kicker">Your neighbourhood diner in Schonsee</span>
-            <h1 id="hero-title">Meet me<br />at <span>Ken’s.</span></h1>
+            <h1 id="hero-title">Meet me<br />at <span>Ken’s</span></h1>
             <p>Big breakfasts, diner classics, and a booth with your name on it. Come hungry, stay awhile.</p>
             <div className="diner-hero-actions">
               <Link className="diner-hero-primary" href={business.specials}>See the specials <span aria-hidden="true">↗</span></Link>
@@ -87,9 +103,21 @@ export default function Home() {
         </div>
       </section>
       <Suspense fallback={<section id="specials" className="home-specials home-specials-loading"><div className="shell">Checking today’s specials…</div></section>}><HomeSpecials /></Suspense>
-      <section id="visit" className="visit" aria-labelledby="visit-title">
+      <section className="visit" aria-labelledby="visit-title">
         <div className="visit-checker" aria-hidden="true" />
-        <div className="shell visit-layout">
+        <section id="reviews" className="home-reviews shell" aria-labelledby="home-reviews-title">
+          <div className="home-reviews-heading">
+            <div><span className="home-reviews-kicker">From Google Reviews</span><h2 id="home-reviews-title">Good word<br />gets around</h2></div>
+            <a href={business.googleReviews} target="_blank" rel="noopener noreferrer">Read more on Google <span aria-hidden="true">↗</span></a>
+          </div>
+          <div className="home-reviews-grid">
+            {reviews.map((review) => <figure className="home-review" key={review.name}>
+              <blockquote><span className="home-review-stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><p>{review.quote}</p></blockquote>
+              <figcaption>{review.name}</figcaption>
+            </figure>)}
+          </div>
+        </section>
+        <div id="visit" className="shell visit-layout">
           <div className="visit-intro">
             <span className="visit-kicker">Find us in Schonsee</span>
             <h2 id="visit-title">Pull up a chair!</h2>
