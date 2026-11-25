@@ -6,6 +6,7 @@ import { business } from "@/data/business";
 import { dailySpecials, type DailySpecial } from "@/data/daily-specials";
 import { NewsletterSignup } from "./newsletter-signup";
 import "./home-hero.css";
+import "./home-menu.css";
 import "./visit.css";
 
 const specialDateLabel = (date: string) => new Intl.DateTimeFormat("en-CA", {
@@ -67,9 +68,24 @@ export default function Home() {
         </div>
         <div className="diner-hero-photo-note" aria-hidden="true">Good food. Better together.</div>
       </section>
-      <section className="hours-strip" aria-label="Opening hours"><div className="shell hours-inner"><div><strong>Monday–Friday</strong><span>{business.hours.weekday.time}</span></div><div><strong>Saturday–Sunday</strong><span>{business.hours.weekend.time}</span></div><div><strong>Weekend brunch</strong><span>{business.brunchService.time}</span></div><p>{business.hours.holiday}</p></div></section>
-      <div className="checker-divider" aria-hidden="true" />
-      <section className="explore shell" aria-labelledby="explore-title"><div className="explore-image"><Image src="/diner-photos/coffee-at-the-counter.webp" alt="Two guests with coffee and breakfast at Ken’s Diner" fill sizes="(max-width: 800px) 100vw, 48vw" /></div><div className="explore-content"><h2 id="explore-title">At the diner</h2><p>Breakfast, lunch, dinner, and a little extra time for brunch on weekends.</p><div className="menu-links"><Link href="/menu#early-bird"><span><strong>Early Bird Breakfast</strong><small>Monday–Friday · 8 am–11 am · Dine-in only</small></span><b aria-hidden="true">↗</b></Link><Link href="/menu#diner"><span><strong>Diner Menu</strong><small>All-day favourites</small></span><b aria-hidden="true">↗</b></Link><Link href="/menu#brunch"><span><strong>Weekend Brunch</strong><small>Saturday–Sunday · 9:30 am–2 pm</small></span><b aria-hidden="true">↗</b></Link></div></div></section>
+      <section className="home-menu" aria-labelledby="home-menu-title">
+        <div className="shell home-menu-inner">
+          <Link className="home-menu-feature" href="/menu#early-bird" aria-label="See the $10 Early Bird Breakfast menu">
+            <Image src="/diner-photos/lady-eating-breakfast.jpg" alt="Breakfast at Ken’s with eggs, bacon, toast, potatoes, and coffee" fill sizes="(max-width: 760px) 100vw, 42vw" />
+            <span className="home-menu-feature-label"><span>Weekday favourite</span><strong>The Early Bird <b>$10</b></strong><span>Mon–Fri · 8–11 am · Dine-in only <span aria-hidden="true">↗</span></span></span>
+          </Link>
+          <div className="home-menu-board">
+            <span className="home-menu-kicker">A little taste of Ken’s</span>
+            <h2 id="home-menu-title">What’ll<br />it be?</h2>
+            <p>From first coffee to the last bite, there’s something good waiting for you.</p>
+            <nav className="home-menu-links" aria-label="Explore the menu">
+              <Link href="/menu#diner"><span><strong>Diner classics</strong><small>Burgers, sandwiches & all-day breakfast</small></span><span aria-hidden="true">↗</span></Link>
+              <Link href="/menu#brunch"><span><strong>Weekend brunch</strong><small>Sat–Sun · 9:30 am–2 pm</small></span><span aria-hidden="true">↗</span></Link>
+            </nav>
+            <Link className="home-menu-all" href="/menu">See the full menu <span aria-hidden="true">↗</span></Link>
+          </div>
+        </div>
+      </section>
       <Suspense fallback={<section id="specials" className="home-specials home-specials-loading"><div className="shell">Checking today’s specials…</div></section>}><HomeSpecials /></Suspense>
       <section id="visit" className="visit" aria-labelledby="visit-title">
         <div className="visit-checker" aria-hidden="true" />
