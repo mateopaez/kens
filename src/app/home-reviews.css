@@ -142,7 +142,6 @@
 @media (max-width: 480px) {
   .home-reviews { padding-top: 55px; padding-bottom: 62px; }
   .home-reviews-heading h2 { font-size: clamp(54px, 14vw, 70px); }
-  .home-reviews-heading > a { width: 100%; justify-content: space-between; }
   .home-reviews-grid { padding-right: 6px; }
   .home-review { border-width: 6px; }
   .home-review blockquote { padding-inline: 18px; }

@@ -92,7 +92,7 @@ export default function Home() {
           </Link>
           <div className="home-menu-board">
             <span className="home-menu-kicker">A little taste of Ken’s</span>
-            <h2 id="home-menu-title">What’ll<br />it be?</h2>
+            <h2 id="home-menu-title">What’ll<br />{" "}it be?</h2>
             <p>From first coffee to the last bite, there’s something good waiting for you.</p>
             <nav className="home-menu-links" aria-label="Explore the menu">
               <Link href="/menu#diner"><span><strong>Diner classics</strong><small>Burgers, sandwiches & all-day breakfast</small></span><span aria-hidden="true">↗</span></Link>

@@ -180,8 +180,7 @@
   .diner-hero-kicker::before { width: 22px; }
   .diner-hero h1 { margin-top: 22px; font-size: clamp(68px, 15vw, 84px); }
   .diner-hero-copy > p { margin-top: 27px; font-size: 18px; }
-  .diner-hero-actions { display: grid; margin-top: 25px; }
-  .diner-hero-actions a { width: 100%; }
+  .diner-hero-actions { flex-direction: column; align-items: flex-start; margin-top: 25px; }
   .diner-hero-location { margin-top: 29px; }
   .diner-hero-image { height: 300px; }
   .diner-hero-photo-note { right: 20px; bottom: 28px; font-size: 17px; }

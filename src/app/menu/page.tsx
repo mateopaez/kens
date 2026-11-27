@@ -59,6 +59,7 @@ function MenuSheet({ src, width, height, alt, label }: { src: string; width: num
 
 export default function MenuPage() {
   return <main id="main" className="retro-menu">
+    <div className="retro-checker" aria-hidden="true" />
     <section className="retro-highlights shell" aria-labelledby="highlights-title">
       <div className="retro-highlights-heading"><div><span className="retro-eyebrow">Ken’s Diner · The menu</span><h1 id="highlights-title">HOUSE FAVOURITES</h1><p>Start with the classics, then explore every page of the menu below.</p></div><a className="retro-button retro-button-outline" href={business.phoneHref}>Call for pickup <span aria-hidden="true">↗</span></a></div>
       <div className="retro-highlights-grid">
