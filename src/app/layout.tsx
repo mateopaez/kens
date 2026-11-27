@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { business } from "@/data/business";
+import SiteHeader from "@/components/SiteHeader";
 import "./globals.css";
 import "./footer.css";
 
@@ -32,25 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${barlow.variable} ${dmSans.variable}`}>
       <body>
         <a className="skip-link" href="#main">Skip to content</a>
-        <header className="site-header">
-          <nav className="shell header-inner" aria-label="Main navigation">
-            <Link href="/" className="header-logo" aria-label="Ken’s Diner home">
-              <Image
-                src="/diner-photos/kens-logo.png"
-                alt=""
-                width={365}
-                height={151}
-                sizes="(max-width: 960px) 144px, (max-width: 1267px) 15vw, 190px"
-                loading="eager"
-              />
-            </Link>
-            <Link className="header-specials" href={business.specials}>Daily specials</Link>
-            <div className="header-actions">
-              <Link href="/#visit">Visit &amp; hours</Link>
-              <Link className="header-menu" href="/menu">View menu</Link>
-            </div>
-          </nav>
-        </header>
+        <SiteHeader />
         {children}
         <footer className="site-footer">
           <div className="footer-info">
