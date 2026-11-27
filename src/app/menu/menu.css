@@ -42,7 +42,7 @@
 .retro-board-nav b{font-size:24px;font-weight:400}
 .retro-menu-pages{padding-block:8px 92px}
 .retro-menu-section{display:grid;grid-template-columns:minmax(270px,.72fr) minmax(0,1fr);gap:clamp(40px,7vw,120px);padding-block:82px;border-bottom:3px solid var(--navy);scroll-margin-top:12px}
-.retro-section-intro{align-self:start;position:sticky;top:28px}
+.retro-section-intro{align-self:start;position:sticky;top:144px}
 .retro-section-index{display:inline-block;font-size:15px;color:var(--red);padding-bottom:11px;border-bottom:2px solid var(--red)}
 .retro-section-intro h2{font-size:clamp(54px,5.2vw,82px);line-height:.9;letter-spacing:-.02em;margin-top:22px}
 .retro-section-intro>p{font-size:18px;line-height:1.5;max-width:390px;margin-top:22px}

@@ -130,6 +130,8 @@ h1,h2,h3{font-family:var(--font-display),'Arial Narrow',Impact,sans-serif;font-w
 .header-mobile-menu { display: none; }
 
 @media (max-width: 760px) {
+  html { scroll-padding-top: 96px; }
+
   .site-header { border-bottom: 4px solid var(--red); }
 
   .header-inner {
@@ -210,6 +212,8 @@ h1,h2,h3{font-family:var(--font-display),'Arial Narrow',Impact,sans-serif;font-w
 }
 
 @media (max-width: 380px) {
+  html { scroll-padding-top: 90px; }
+
   .header-logo img { width: 116px; }
   .header-inner { min-height: 74px; }
   .header-mobile-menu { font-size: 1.35rem; }
